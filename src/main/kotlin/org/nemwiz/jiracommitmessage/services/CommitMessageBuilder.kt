@@ -52,7 +52,7 @@ class CommitMessageBuilder(private val jiraIssue: String?) {
 
     fun withConventionalCommit(conventionalCommitType: String?): CommitMessageBuilder {
         conventionalCommitType?.let {
-            commitMessage = String.format(Locale.US, "%s%s", conventionalCommitType, commitMessage)
+            commitMessage = String.format(Locale.US, "%s: %s", conventionalCommitType, commitMessage)
         }
         return this
     }
